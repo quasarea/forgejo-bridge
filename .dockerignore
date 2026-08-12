@@ -1,0 +1,7 @@
+.git
+.tmp
+bin
+dist
+coverage.out
+.env
+.forgejo-bridge.local.toml

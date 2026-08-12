@@ -1,0 +1,9 @@
+default_instance = "forgejo15"
+
+[instances.forgejo15]
+base_url = "http://127.0.0.1:13015"
+read_only = true
+
+[instances.forgejo16]
+base_url = "http://127.0.0.1:13016"
+read_only = true

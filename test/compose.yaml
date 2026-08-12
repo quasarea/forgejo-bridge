@@ -1,0 +1,28 @@
+services:
+  forgejo15:
+    image: codeberg.org/forgejo/forgejo:15.0.6-rootless
+    environment:
+      FORGEJO__database__DB_TYPE: sqlite3
+      FORGEJO__security__INSTALL_LOCK: "true"
+      FORGEJO__server__HTTP_PORT: "3000"
+    ports:
+      - "13015:3000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/v1/version"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+
+  forgejo16:
+    image: codeberg.org/forgejo/forgejo:16.0.2-rootless
+    environment:
+      FORGEJO__database__DB_TYPE: sqlite3
+      FORGEJO__security__INSTALL_LOCK: "true"
+      FORGEJO__server__HTTP_PORT: "3000"
+    ports:
+      - "13016:3000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/v1/version"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
